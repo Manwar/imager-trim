@@ -1,4 +1,5 @@
 package Imager::Trim;
+
 use parent 'Imager';
 use Imager::Color;
 use warnings;
@@ -140,13 +141,9 @@ sub trim {
 
 1;
 
-=head1 NAME
+# ABSTRACT: automatic cropping for images using Imager.
 
-Imager::Trim - automatic cropping for images using Imager.
-
-=head1 VERSION
-
-version 0.001
+# VERSION
 
 =head1 SYNOPSIS
 

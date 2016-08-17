@@ -46,7 +46,7 @@ You can even do the cropping manually using Imager (on this example, we're leavi
 
 # DESCRIPTION
 
-This module extends `Imager` to allow automatic cropping of images. The method is similar as used in image editors (e.g. "magic wand") or with ImageMagick's "trim" (e.g. `convert image.jpg -fuzz 50 -background white -trim cropped_image.jpg`).
+This module extends `Imager` to allow automatic cropping of images. The method is similar as used in image editors (e.g. "magic wand") or with ImageMagick's "trim" (e.g. 'convert image.jpg -fuzz 50 -background white -trim cropped\_image.jpg').
 
 # SEE ALSO
 
@@ -54,7 +54,18 @@ This module extends `Imager` to allow automatic cropping of images. The method i
 
 # AUTHOR
 
-Jussi Kinnula &lt;spot@cpan.org>
+Jussi Kinnula <spot@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Jussi Kinnula.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+# AUTHOR
+
+Jussi Kinnula <spot@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
