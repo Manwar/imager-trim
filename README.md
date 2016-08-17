@@ -17,7 +17,7 @@ version 0.001
 
     $cropped_image->write( file => 'cropped_image.jpg' );
 
-By default the first pixel from top left is used for automatic cropping, however you can provide yourself an C<Imager::Color> for custom action:
+By default the first pixel from top left is used for automatic cropping, however you can provide yourself an `Imager::Color` for custom action:
 
     use Imager::Trim;
     use Imager::Color;
