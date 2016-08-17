@@ -1,9 +1,11 @@
+use strict;
 package Imager::Trim;
+# ABSTRACT: automatic cropping for images using Imager.
+
+# VERSION
 
 use parent 'Imager';
 use Imager::Color;
-use warnings;
-use strict;
 
 sub fuzz {
     my ($self, $value) = @_;
@@ -24,7 +26,7 @@ sub color {
             $self->{color} = Imager::Color->new(@values);
         }
     } elsif (!$self->{color}) {
-        $self->{color} = $self->getpixel( x => 0, y => 0 );        
+        $self->{color} = $self->getpixel( x => 0, y => 0 );
     }
     return $self->{color};
 }
@@ -141,10 +143,6 @@ sub trim {
 
 1;
 
-# ABSTRACT: automatic cropping for images using Imager.
-
-# VERSION
-
 =head1 SYNOPSIS
 
     use Imager::Trim;
@@ -154,27 +152,28 @@ sub trim {
 
     my $cropped_image = $imager->trim( fuzz => 50 );
 
-The image can be saved or used just as an ordinary C<Imager> would:
-
     $cropped_image->write( file => 'cropped_image.jpg' );
 
 By default the first pixel from top left is used for automatic cropping, however you can provide yourself an C<Imager::Color> for custom action:
 
-    use Imager::Color
+    use Imager::Trim;
+    use Imager::Color;
 
-    # White
-    my $color = Imager::Color->new("#FFFFFF");
+    my $white_color = Imager::Color->new("#FFFFFF");
+    my $imager = Imager::Trim->new( file => 'image_with_white_background.jpg' );
+    my $color_cropped_image = $imager->trim( color => $white_color );
 
-    my $color_cropped_image = $imager->trim( color => $color );
+You can even do the cropping manually using Imager (on this example, we're leaving 2px extra space around the automatically cropped image if there's 5px margin):
 
-See cropped positions:
+    use Imager::Trim;
+
+    my $imager = Imager::Trim->new( file => 'image.jpg' );
+    my $cropped_image = $imager->trim();
 
     my $trim_top = $cropped_image->trim_top;
     my $trim_left = $cropped_image->trim_left;
     my $trim_right = $cropped_image->trim_right;
     my $trim_bottom = $cropped_image->trim_bottom;
-
-You can even do the cropping manually using Imager (on this example, we're leaving 2px extra space around the automatically cropped image if there's 5px margin):
 
     my $manually_cropped_image = $imager->crop(
         top => ($trim_top > 5) ? ($trim_top - 2) : $trim_top,
