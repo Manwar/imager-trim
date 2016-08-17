@@ -1,6 +1,5 @@
+#!perl -w
 use strict;
-use Test::More tests => 4;
+use Test::More tests => 1;
 
-BEGIN {
-    use_ok 'Imager::Trim';
-}
+use_ok('Imager::Trim');
