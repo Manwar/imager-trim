@@ -4,7 +4,7 @@ Imager::Trim - automatic cropping for images using Imager.
 
 # VERSION
 
-version 0.003
+version 0.004
 
 # SYNOPSIS
 
