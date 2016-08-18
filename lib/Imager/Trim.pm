@@ -148,7 +148,7 @@ sub trim {
     use Imager::Trim;
 
     my $imager = Imager::Trim->new( file => 'image.jpg' )
-        or die "Cannot open file: ", Imager->errstr();
+        or die "Cannot open file: ", Imager::Trim->errstr();
 
     my $cropped_image = $imager->trim( fuzz => 50 );
 
