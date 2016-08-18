@@ -4,7 +4,7 @@ Imager::Trim - automatic cropping for images using Imager.
 
 # VERSION
 
-version 0.005
+version 0.006
 
 # SYNOPSIS
 
@@ -52,17 +52,6 @@ This module extends `Imager` to allow automatic cropping of images. The method i
 # SEE ALSO
 
 [http://imager.perl.org/](http://imager.perl.org/)
-
-# AUTHOR
-
-Jussi Kinnula <spot@cpan.org>
-
-# COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2016 by Jussi Kinnula.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
 
 # AUTHOR
 

@@ -190,15 +190,4 @@ This module extends C<Imager> to allow automatic cropping of images. The method 
 
 L<http://imager.perl.org/>
 
-=head1 AUTHOR
-
-Jussi Kinnula <spot@cpan.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2016 by Jussi Kinnula.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
 =cut
