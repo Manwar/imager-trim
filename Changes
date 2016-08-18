@@ -2,6 +2,9 @@ Changelog for Imager::Trim
 
 {{$NEXT}}
 
+0.006     2016-08-18 14:42:38+03:00 Europe/Helsinki
+  * Remove duplicate AUTHOR and COPYRIGHT AND LICENSE topics
+
 0.005     2016-08-18 10:44:40+03:00 Europe/Helsinki
   * Fix documentation
 
