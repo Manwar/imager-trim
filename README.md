@@ -4,7 +4,7 @@ Imager::Trim - automatic cropping for images using Imager.
 
 # VERSION
 
-version 0.006
+version 0.007
 
 # SYNOPSIS
 
@@ -26,23 +26,24 @@ By default the first pixel from top left is used for automatic cropping, however
     my $imager = Imager::Trim->new( file => 'image_with_white_background.jpg' );
     my $color_cropped_image = $imager->trim( color => $white_color );
 
-You can even do the cropping manually using Imager (on this example, we're leaving 2px extra space around the automatically cropped image if there's 5px margin):
+You can even do the cropping manually using Imager (on this example, we're leaving 10px extra space around the automatically cropped image, if possible:
 
     use Imager::Trim;
 
     my $imager = Imager::Trim->new( file => 'image.jpg' );
     my $cropped_image = $imager->trim();
 
-    my $trim_top = $cropped_image->trim_top;
-    my $trim_left = $cropped_image->trim_left;
-    my $trim_right = $cropped_image->trim_right;
-    my $trim_bottom = $cropped_image->trim_bottom;
+    my $border = 10;
+    my $top = $cropped_image->{trim_top} - $border;
+    my $left = $cropped_image->{trim_left} - $border;
+    my $right = $cropped_image->{trim_right} + $border;
+    my $bottom = $cropped_image->{trim_bottom} + $border;
 
     my $manually_cropped_image = $imager->crop(
-        top => ($trim_top > 5) ? ($trim_top - 2) : $trim_top,
-        left => ($trim_left > 5) ? ($trim_left - 2) : $trim_left,
-        right => ($trim_right > 5) ? ($trim_right - 2) : $trim_right,
-        bottom => ($trim_bottom > 5) ? ($trim_bottom - 2) : $trim_bottom
+        top => ($top > 0) ? $top : 0,
+        left => ($left > 0) ? $left : 0,
+        right => ($right > 0) ? $right : 0,
+        bottom => ($bottom > 0) ? $bottom : 0
     );
 
 # DESCRIPTION
